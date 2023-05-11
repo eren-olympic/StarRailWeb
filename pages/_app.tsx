@@ -1,13 +1,6 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
-
-// Extend the theme to include the Arvo font
-const theme = extendTheme({
-  fonts: {
-    heading: 'Arvo',
-    body: 'Arvo',
-  },
-})
+import theme from '../chakra.config'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
