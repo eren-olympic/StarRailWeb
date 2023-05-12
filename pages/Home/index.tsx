@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import { Text, Image, Box, Center, useTheme } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 
 const HomePage = () => {
     const [isPresent, setIsPresent] = useState(false);
@@ -9,15 +10,24 @@ const HomePage = () => {
     return (
         <div>
             <Navbar />
-            <Center bg={theme.colors.foreground} h='400px' color={theme.colors.text}>
-                <Box boxSize='sm'>
-                    <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
-                </Box>
-                <div>
-                    <h1>Home Page</h1>
-                    <Text fontSize='xs' color={theme.colors.comment}>This is a demo description</Text>
-                </div>
-            </Center>
+            <Tabs variant='enclosed' isFitted>
+                <TabList>
+                    <Tab>Tab1</Tab>
+                    <Tab>Tab2</Tab>
+                    <Tab>Tab3</Tab>
+                </TabList>
+                <TabPanels>
+                    <TabPanel>
+                        <p>This is Tab One!</p>
+                    </TabPanel>
+                    <TabPanel>
+                        <p>This is Tab Two!</p>
+                    </TabPanel>
+                    <TabPanel>
+                        <p>This is Tab Three!</p>
+                    </TabPanel>
+                </TabPanels>
+            </Tabs>
         </div>
     );
 };
