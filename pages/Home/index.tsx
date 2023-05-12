@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import { Text, Image, Box, Center, useTheme } from '@chakra-ui/react'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import CharacterList from '../../components/Character/CharacterList';
 
 const HomePage = () => {
     const [isPresent, setIsPresent] = useState(false);
@@ -10,7 +11,8 @@ const HomePage = () => {
     return (
         <div>
             <Navbar />
-            <Tabs variant='enclosed' isFitted>
+            <Box h='4' w="100%" p={4} />
+            <Tabs variant='enclosed' align='center'>
                 <TabList>
                     <Tab>Tab1</Tab>
                     <Tab>Tab2</Tab>
@@ -19,6 +21,7 @@ const HomePage = () => {
                 <TabPanels>
                     <TabPanel>
                         <p>This is Tab One!</p>
+                        <CharacterList />
                     </TabPanel>
                     <TabPanel>
                         <p>This is Tab Two!</p>
